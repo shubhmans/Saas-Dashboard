@@ -6,27 +6,22 @@ import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
 import { ShoppingBag } from 'lucide-react';
-import Link from 'next/link';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('admin@dashboard.com');
-  const [password, setPassword] = useState('Admin@123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login form submitted');
     setError('');
     setIsLoading(true);
 
     try {
-      console.log('Calling login function from AuthContext');
       await login(email, password);
-      console.log('Login function completed');
     } catch (err: any) {
-      console.error('Login error in component:', err);
       setError(err.message || 'Invalid credentials');
     } finally {
       setIsLoading(false);
