@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import { Search, Bell, HelpCircle } from 'lucide-react';
+import { Search, Bell, HelpCircle, LogOut } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
 export function Topbar() {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
 
   return (
     <header className="h-20 bg-[#050505]/60 backdrop-blur-xl border-b border-white/[0.08] flex items-center justify-between px-10 sticky top-0 z-40">
@@ -31,15 +31,25 @@ export function Topbar() {
         
         <div className="h-8 w-px bg-white/[0.08]"></div>
         
-        <div className="flex items-center gap-4 pl-2">
-          <div className="text-right hidden sm:block">
-            <p className="text-sm font-bold text-white leading-none mb-1">{user?.name}</p>
-            <p className="text-[10px] uppercase font-black text-indigo-500 tracking-widest opacity-80">{user?.role}</p>
+        <div className="flex items-center gap-6 pl-2">
+          <div className="flex items-center gap-4">
+            <div className="text-right hidden sm:block">
+              <p className="text-sm font-bold text-white leading-none mb-1">{user?.name}</p>
+              <p className="text-[10px] uppercase font-black text-indigo-500 tracking-widest opacity-80">{user?.role}</p>
+            </div>
+            <div className="relative group cursor-pointer">
+              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-40 blur transition duration-300"></div>
+              <img src={user?.avatar} alt={user?.name} className="relative h-10 w-10 rounded-full border-2 border-white/10 object-cover" referrerPolicy="no-referrer" />
+            </div>
           </div>
-          <div className="relative group cursor-pointer">
-            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-40 blur transition duration-300"></div>
-            <img src={user?.avatar} alt={user?.name} className="relative h-10 w-10 rounded-full border-2 border-white/10 object-cover" referrerPolicy="no-referrer" />
-          </div>
+
+          <button 
+            onClick={logout}
+            className="flex items-center gap-2 px-4 py-2 bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white border border-rose-500/20 rounded-xl transition-all duration-300 group"
+          >
+            <LogOut size={16} className="group-hover:-translate-x-0.5 transition-transform" />
+            <span className="text-xs font-bold uppercase tracking-widest hidden md:block">Logout</span>
+          </button>
         </div>
       </div>
     </header>

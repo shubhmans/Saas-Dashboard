@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
+import { ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 export default function LoginPage() {
@@ -41,14 +42,10 @@ export default function LoginPage() {
       <div className="w-full max-w-md space-y-10 relative z-10 animate-fade-up">
         <div className="text-center space-y-4">
           <div className="inline-flex h-14 w-14 bg-indigo-600 rounded-2xl items-center justify-center shadow-[0_0_30px_rgba(79,70,229,0.4)] mb-2">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 17L12 22L22 17" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M2 12L12 17L22 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <ShoppingBag size={28} className="text-white" />
           </div>
-          <h1 className="text-4xl font-black text-white tracking-tighter">Welcome Back</h1>
-          <p className="text-gray-500 font-medium">Access your Nexus analytics dashboard</p>
+          <h1 className="text-4xl font-black text-white tracking-tighter uppercase">Shopping saga</h1>
+          <p className="text-gray-500 font-medium">Access your e-commerce analytics dashboard</p>
         </div>
 
         <Card className="border-white/[0.05] bg-white/[0.02] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -87,7 +84,7 @@ export default function LoginPage() {
         </Card>
 
         <div className="text-center text-[10px] font-black text-gray-700 uppercase tracking-[0.2em]">
-          <p>© 2026 Nexus Analytics • Secured by AES-256</p>
+          <p>© 2026 Shopping saga • Secured by AES-256</p>
         </div>
       </div>
     </div>
