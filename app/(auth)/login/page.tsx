@@ -58,7 +58,7 @@ export default function LoginPage() {
                 <Input 
                   label="Email Address" 
                   type="email" 
-                  placeholder="admin@dashboard.com"
+                  placeholder="Admin email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
