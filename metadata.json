@@ -1,5 +1,5 @@
 {
-  "name": "Nexus SaaS Analytics Dashboard",
-  "description": "A production-ready SaaS analytics dashboard with JWT authentication, real-time charts, and user management.",
+  "name": "Shopping saga",
+  "description": "Premium e-commerce analytics and management dashboard",
   "requestFramePermissions": []
 }

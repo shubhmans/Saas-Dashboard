@@ -7,8 +7,11 @@ import { ThemeProvider } from "next-themes";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nexus | SaaS Analytics Dashboard",
-  description: "Production-ready SaaS analytics dashboard",
+  title: "Shopping saga | E-commerce Analytics",
+  description: "Premium e-commerce analytics and management dashboard",
+  icons: {
+    icon: "https://cdn-icons-png.flaticon.com/512/1170/1170577.png",
+  },
 };
 
 export default function RootLayout({
